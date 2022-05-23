@@ -3,7 +3,6 @@ library(randomForest)
 library(e1071)
 library(caret)
 
-setwd("C:/Users/Samsung/Desktop/빅분기실기준비/220520")
 main.ds <- read.csv(
     file = "TravelInsurancePrediction.csv",
     stringsAsFactor = TRUE,
@@ -104,7 +103,7 @@ result
 colnames(result) <- c("index", "y_pred")
 head(result)
 
-write.csv(result, "0000.csv", row.names = FALSE)
-result <- read.csv("0000.csv")
+write.csv(result, "predict_result.csv", row.names = FALSE)
+result <- read.csv("predict_result.csv")
 result <- head(result, 10)
 print(result)
